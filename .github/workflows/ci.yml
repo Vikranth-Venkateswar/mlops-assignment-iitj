@@ -18,7 +18,9 @@ jobs:
           pip install -r requirements.txt
       - name: Run tests
         run: |
+          export PYTHONPATH=.
           pytest tests/
+
 
   train-and-quantize:
     runs-on: ubuntu-latest
