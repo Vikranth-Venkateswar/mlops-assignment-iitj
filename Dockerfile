@@ -6,8 +6,6 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY src/ src/
-COPY model.joblib .    
 
-CMD ["python", "src/predict.py"]
-
-
+# Train the model and then run predictions
+CMD python src/train.py && python src/predict.py
